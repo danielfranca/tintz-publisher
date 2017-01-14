@@ -4,7 +4,13 @@
 #include <getopt.h>
 
 #include <iostream>
-#include <string>
+#include "../include/PublisherFactory.h"
+
+bool convertFile(std::string fileName) {
+    auto publisher = PublisherFactory::make(fileName);
+    //auto images = publisher->toSortedImagesList();
+    return true;
+}
 
 int main(int argc, char* argv[]) {
 
@@ -32,6 +38,7 @@ int main(int argc, char* argv[]) {
             case 'f':
                 filename = optarg;
                 std::cout << "File: " << filename;
+                convertFile(filename);
                 break;
             case 'h':
                 std::cout << usage_str;
