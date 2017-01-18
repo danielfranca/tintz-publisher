@@ -7,8 +7,8 @@
 #include "../include/PublisherFactory.h"
 
 bool convertFile(std::string fileName) {
-    auto publisher = PublisherFactory::make(fileName);
-    //auto images = publisher->toSortedImagesList();
+    auto publisher = tintz::PublisherFactory::make(fileName);
+    auto images = publisher->publish();
     return true;
 }
 

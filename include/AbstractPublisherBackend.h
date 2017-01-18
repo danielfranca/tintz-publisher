@@ -7,14 +7,14 @@
 
 #include <vector>
 
-#include "image.h"
+#include "ComicBook.h"
 
 class AbstractPublisherBackend {
     public:
         AbstractPublisherBackend(std::string fileName) {
             this->fileName = fileName;
         }
-        virtual std::vector<tintz::Image> toSortedImagesList()=0;
+        virtual tintz::ComicBook publish()=0;
 
     protected:
         std::string fileName;

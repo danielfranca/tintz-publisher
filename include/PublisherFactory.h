@@ -10,11 +10,13 @@
 
 #include <memory>
 
-class PublisherFactory {
-public:
-    static std::shared_ptr<AbstractPublisherBackend> make(std::string fileName) {
-        return std::make_shared<CBZPublisher>(fileName);
-    }
-};
+namespace tintz {
+    class PublisherFactory {
+    public:
+        static std::shared_ptr<AbstractPublisherBackend> make(std::string fileName) {
+            return std::make_shared<CBZPublisher>(fileName);
+        }
+    };
+}
 
 #endif //TINTZPUBLISHER_PUBLISHERFACTORY_H

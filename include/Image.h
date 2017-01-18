@@ -18,16 +18,21 @@ namespace tintz {
         private:
             std::string fileName;
             std::vector<unsigned char> binaryData;
+            unsigned int pageNumber;
 
         public:
 
-            Image(std::string fileName, std::vector<unsigned char>&& binaryData) {
+            Image(std::string fileName, unsigned int pageNumber, std::vector<unsigned char>& binaryData) {
                 this->fileName = fileName;
                 this->binaryData = binaryData;
+                this->pageNumber = pageNumber;
             }
 
             bool save();
 
+            unsigned int getPageNumber() {
+                return this->pageNumber;
+            };
     };
 
 }

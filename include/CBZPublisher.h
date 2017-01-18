@@ -7,11 +7,15 @@
 
 #include "AbstractPublisherBackend.h"
 #include <zipper/unzipper.h>
+#include "ComicBook.h"
 
-class CBZPublisher : public AbstractPublisherBackend {
+namespace tintz {
+    class CBZPublisher : public AbstractPublisherBackend {
     public:
         CBZPublisher(std::string fileName) : AbstractPublisherBackend(fileName) {};
-        std::vector<tintz::Image> toSortedImagesList() override;
-};
+
+        ComicBook publish() override;
+    };
+}
 
 #endif //TINTZPUBLISHER_CBZPUBLISHER_H
